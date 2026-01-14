@@ -326,6 +326,11 @@ return [
             'route' => 'jabatan.index',
             'icon' => 'fas fa-fw fa-briefcase',
         ],
+        [
+            'text' => 'Jabatan Karyawan',
+            'route' => 'jabatan-karyawan.index',
+            'icon' => 'fas fa-fw fa-users-cog',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -449,7 +454,7 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\JabatanKaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'admin','middleware' => ['auth']], function(){
-Route::resource('pengguna', UserController::class);
-Route::resource('jabatan', JabatanController::class);
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
+    Route::resource('pengguna', UserController::class);
+    Route::resource('jabatan', JabatanController::class);
+    Route::resource('jabatan-karyawan', JabatanKaryawanController::class);
 });

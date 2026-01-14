@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jabatan extends Model
+class JabatanKaryawan extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Jabatan extends Model
      *
      * @var string
      */
-    protected $table = 'jabatan';
+    protected $table = 'jabatan_karyawan';
 
     /**
      * Indicates if the model should be timestamped.
@@ -29,17 +29,25 @@ class Jabatan extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'nama_jabatan',
-        'gapok_jabatan',
-        'tunjangan_jabatan',
-        'uang_makan_perhari',
+        'jabatan_id',
+        'karyawan_id',
+        'tanggal_mulai',
     ];
 
     /**
-     * Get all jabatan karyawan records for this jabatan.
+     * Get the jabatan associated with this record.
      */
-    public function jabatanKaryawan()
+    public function jabatan()
     {
-        return $this->hasMany(JabatanKaryawan::class, 'jabatan_id');
+        return $this->belongsTo(Jabatan::class, 'jabatan_id');
+    }
+
+    /**
+     * Get the karyawan associated with this record.
+     */
+    public function karyawan()
+    {
+        return $this->belongsTo(Karyawan::class, 'karyawan_id');
     }
 }
+
