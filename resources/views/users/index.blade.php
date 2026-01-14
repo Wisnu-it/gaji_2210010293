@@ -39,14 +39,7 @@
                                     </td>
                                 </tr>
                             @endforeach
-                            <td class="text-center">
-                            <form action="{{ route('pengguna.destroy', $user->id) }}" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <a href="{{ route('pengguna.edit', $user->id) }}" class="btn btn-md btn-warning">EDIT</a>
-                                <button type="submit" class="btn btn-md btn-danger">HAPUS</button>
-                            </form>
-                            </td>
+
                         </table>
                     </div>
                 </div>
