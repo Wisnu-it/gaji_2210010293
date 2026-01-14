@@ -321,6 +321,11 @@ return [
             'route' => 'pengguna.index',
             'icon' => 'fas fa-fw fa-user',
         ],
+        [
+            'text' => 'Jabatan',
+            'route' => 'jabatan.index',
+            'icon' => 'fas fa-fw fa-briefcase',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
