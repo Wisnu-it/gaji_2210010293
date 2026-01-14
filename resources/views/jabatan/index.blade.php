@@ -13,7 +13,20 @@
                 <div class="card-header clearfix">
                     <h2 class="card-title mb-0"><strong>Table Data Jabatan</strong></h2>
                     <div class="card-tools">
-                        <a href="{{ route('jabatan.create') }}" class="btn btn-primary btn-md">Tambah Jabatan</a>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Aksi Jabatan">
+                            <a href="{{ route('jabatan.create') }}" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Tambah
+                            </a>
+                            <a href="{{ route('print.jabatan') }}" class="btn btn-info">
+                                <i class="fas fa-print"></i> Print
+                            </a>
+                            <a href="{{ route('export.excel') }}" class="btn btn-success">
+                                <i class="far fa-file-excel"></i> Export Excel
+                            </a>
+                            <a href="{{ route('grafik.jabatan') }}" class="btn btn-warning">
+                                <i class="fas fa-chart-bar"></i> Grafik
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -38,11 +51,17 @@
                                     <td>Rp {{ number_format($jabatan->tunjangan_jabatan, 0, ',', '.') }}</td>
                                     <td>Rp {{ number_format($jabatan->uang_makan_perhari, 0, ',', '.') }}</td>
                                     <td class="text-center">
-                                        <form action="{{ route('jabatan.destroy', $jabatan->id) }}" method="post" style="display: inline-block;">
+                                        <form action="{{ route('jabatan.destroy', $jabatan->id) }}" method="post" class="d-inline">
                                             @method('DELETE')
                                             @csrf
-                                            <a href="{{ route('jabatan.edit', $jabatan->id) }}" class="btn btn-md btn-warning">EDIT</a>
-                                            <button type="button" class="btn btn-md btn-danger btn-delete">HAPUS</button>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Aksi">
+                                                <a href="{{ route('jabatan.edit', $jabatan->id) }}" class="btn btn-warning" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-delete" title="Hapus">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </div>
                                         </form>
                                     </td>
                                 </tr>

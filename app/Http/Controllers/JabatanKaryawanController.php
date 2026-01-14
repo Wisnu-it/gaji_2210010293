@@ -8,6 +8,7 @@ use App\Models\Jabatan;
 use App\Models\Karyawan;
 use Alert;
 
+
 class JabatanKaryawanController extends Controller
 {
     /**
@@ -100,5 +101,6 @@ class JabatanKaryawanController extends Controller
         Alert::success('Sukses', 'Berhasil Menghapus Jabatan Karyawan');
         return redirect()->route('jabatan-karyawan.index');
     }
+
 }
 
